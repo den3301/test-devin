@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AETHERIA — Mythic MMO of Eternal Realms</title>
+<meta name="description" content="AETHERIA — эпический MMO-мир в стиле фэнтези. Классы, подземелья, гильдии, драконы. Присоединяйся к миллионам игроков." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Magical cursor aura -->
+<div class="cursor-aura" id="cursorAura"></div>
+
+<!-- Particles canvas -->
+<canvas id="particles" class="particles"></canvas>
+
+<!-- NAVIGATION -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="logo" aria-label="Aetheria">
+      <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="gLogo" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#f5d37a"/>
+            <stop offset="1" stop-color="#a67c2a"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 4 L58 52 H42 L32 34 L22 52 H6 Z" fill="url(#gLogo)"/>
+        <path d="M32 22 L40 38 H24 Z" fill="#0a0a12"/>
+      </svg>
+      <span class="logo__text">AETHERIA</span>
+    </a>
+    <nav class="nav__menu" aria-label="Основное меню">
+      <a href="#world">Мир</a>
+      <a href="#classes">Классы</a>
+      <a href="#features">Особенности</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#news">Хроники</a>
+    </nav>
+    <a href="#cta" class="btn btn--gold nav__cta">
+      <span>Играть бесплатно</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav__burger" aria-label="Меню" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__layers" data-parallax-root>
+    <div class="hero__layer hero__layer--sky" data-depth="0.05"></div>
+    <div class="hero__layer hero__layer--castle" data-depth="0.15" style="background-image:url('assets/img/hero-castle.jpg')"></div>
+    <div class="hero__layer hero__layer--mist" data-depth="0.35"></div>
+    <div class="hero__layer hero__layer--foreground" data-depth="0.55"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__grain"></div>
+  </div>
+
+  <div class="hero__content">
+    <p class="eyebrow reveal">— Эпическая сага пробуждается —</p>
+    <h1 class="hero__title">
+      <span class="line reveal" style="--d:.1s">Мифический мир</span>
+      <span class="line gold reveal" style="--d:.25s">AETHERIA</span>
+    </h1>
+    <p class="hero__tag reveal" style="--d:.45s">Бескрайние земли. Древние драконы. Гильдии, сражающиеся за судьбу континента.<br/>Твоя легенда начинается сегодня.</p>
+    <div class="hero__ctas reveal" style="--d:.6s">
+      <a href="#cta" class="btn btn--gold btn--lg">
+        <span>Начать приключение</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="btn btn--ghost btn--lg" id="trailerBtn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        <span>Трейлер</span>
+      </button>
+    </div>
+    <div class="hero__stats reveal" style="--d:.8s">
+      <div><b>12M+</b><span>искателей приключений</span></div>
+      <div><b>4.9★</b><span>оценка сообщества</span></div>
+      <div><b>180</b><span>подземелий</span></div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#world" aria-label="Прокрутить вниз">
+    <span>scroll</span>
+    <span class="hero__scroll-line"></span>
+  </a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>✶ Эра Драконов</span><span>✶ Кровавый Престол</span><span>✶ Тысяча Башен</span><span>✶ Рунные Поля</span><span>✶ Ледяные Чертоги</span><span>✶ Эра Драконов</span><span>✶ Кровавый Престол</span><span>✶ Тысяча Башен</span><span>✶ Рунные Поля</span><span>✶ Ледяные Чертоги</span>
+  </div>
+</div>
+
+<!-- WORLD -->
+<section class="world section" id="world">
+  <div class="section__head">
+    <p class="eyebrow reveal">— Глава I —</p>
+    <h2 class="title reveal">Шесть королевств. <span class="gold">Одна судьба.</span></h2>
+  </div>
+  <div class="world__grid">
+    <div class="world__text">
+      <p class="reveal">Тысячу лет назад Разлом расколол небеса, выпустив древних Тираний. Теперь материк Этерион лежит в руинах магии, пыли и памяти — и только герои способны переписать его хроники.</p>
+      <p class="reveal">Исследуй живой открытый мир площадью <b>420&nbsp;км²</b>: от выжженных пустошей Варнхейма до сияющих архипелагов Лунной Короны. Каждое место рождает собственный сюжет.</p>
+      <ul class="world__bullets">
+        <li class="reveal"><svg viewBox="0 0 24 24"><path d="M4 12l5 5 11-11" stroke="currentColor" stroke-width="2" fill="none"/></svg>Динамическая смена дня, ночи и сезонов</li>
+        <li class="reveal"><svg viewBox="0 0 24 24"><path d="M4 12l5 5 11-11" stroke="currentColor" stroke-width="2" fill="none"/></svg>Массовые осады до 200 vs 200 игроков</li>
+        <li class="reveal"><svg viewBox="0 0 24 24"><path d="M4 12l5 5 11-11" stroke="currentColor" stroke-width="2" fill="none"/></svg>Кросс-платформа: PC, консоли, облако</li>
+      </ul>
+      <div class="counters reveal">
+        <div class="counter"><b data-count="420">0</b><span>км² мира</span></div>
+        <div class="counter"><b data-count="180">0</b><span>подземелий</span></div>
+        <div class="counter"><b data-count="37">0</b><span>фракций</span></div>
+      </div>
+    </div>
+    <div class="world__art reveal">
+      <div class="world__frame">
+        <img src="assets/img/misty-mount.jpg" alt="Туманные горы Этериона" />
+        <div class="world__frame-glow"></div>
+      </div>
+      <div class="world__badge">
+        <span>ЖИВОЙ МИР</span>
+        <b>24/7</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="classes section" id="classes">
+  <div class="section__head">
+    <p class="eyebrow reveal">— Пантеон героев —</p>
+    <h2 class="title reveal">Выбери свой <span class="gold">путь</span></h2>
+    <p class="subtitle reveal">Четыре архетипа, десятки ветвей развития, тысячи сборок. От первого удара — до легендарной формы.</p>
+  </div>
+
+  <div class="classes__tabs" role="tablist">
+    <button class="tab is-active" role="tab" data-tab="warrior"><span class="tab__num">I</span><span>Воин</span></button>
+    <button class="tab" role="tab" data-tab="mage"><span class="tab__num">II</span><span>Маг</span></button>
+    <button class="tab" role="tab" data-tab="ranger"><span class="tab__num">III</span><span>Следопыт</span></button>
+    <button class="tab" role="tab" data-tab="rogue"><span class="tab__num">IV</span><span>Разбойник</span></button>
+  </div>
+
+  <div class="classes__stage">
+    <!-- Warrior -->
+    <article class="clazz is-active" data-class="warrior">
+      <div class="clazz__img"><img src="assets/img/knight-armor.jpg" alt="Воин в латах" /></div>
+      <div class="clazz__meta">
+        <h3>Воин <span>· Страж Рассвета</span></h3>
+        <p>Нерушимая сталь фронта. Мастер ближнего боя, берущий на себя гнев врагов и возвращающий его удвоенным.</p>
+        <div class="stats">
+          <div><span>Мощь</span><i><em style="--v:92%"></em></i></div>
+          <div><span>Защита</span><i><em style="--v:95%"></em></i></div>
+          <div><span>Магия</span><i><em style="--v:30%"></em></i></div>
+          <div><span>Ловкость</span><i><em style="--v:55%"></em></i></div>
+        </div>
+        <div class="clazz__skills">
+          <div><b>Валкирия</b><span>Разрушающий взмах, пробивающий щиты.</span></div>
+          <div><b>Цитадель</b><span>Барьер духа, поглощающий урон союзникам.</span></div>
+          <div><b>Клятва Эртгарда</b><span>Ultimate: призыв павших в сталь доспеха.</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- Mage -->
+    <article class="clazz" data-class="mage">
+      <div class="clazz__img"><img src="assets/img/wizard-tower.jpg" alt="Башня мага" /></div>
+      <div class="clazz__meta">
+        <h3>Маг <span>· Хранитель Рун</span></h3>
+        <p>Повелитель стихий и забытых рун. Плетёт бурю одним жестом, останавливает время — другим.</p>
+        <div class="stats">
+          <div><span>Мощь</span><i><em style="--v:60%"></em></i></div>
+          <div><span>Защита</span><i><em style="--v:35%"></em></i></div>
+          <div><span>Магия</span><i><em style="--v:98%"></em></i></div>
+          <div><span>Ловкость</span><i><em style="--v:50%"></em></i></div>
+        </div>
+        <div class="clazz__skills">
+          <div><b>Арканум</b><span>Энергетический залп, бьющий по площади.</span></div>
+          <div><b>Хроно-Узел</b><span>Краткая остановка времени в радиусе 8м.</span></div>
+          <div><b>Эгида Небес</b><span>Ultimate: метеоритный дождь и буря.</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- Ranger -->
+    <article class="clazz" data-class="ranger">
+      <div class="clazz__img"><img src="assets/img/mist-forest.jpg" alt="Лесной следопыт" /></div>
+      <div class="clazz__meta">
+        <h3>Следопыт <span>· Голос Чащи</span></h3>
+        <p>Тень леса и шепот ветра. Уязвимый вблизи — беспощадный на расстоянии. Связан с духами-компаньонами.</p>
+        <div class="stats">
+          <div><span>Мощь</span><i><em style="--v:70%"></em></i></div>
+          <div><span>Защита</span><i><em style="--v:55%"></em></i></div>
+          <div><span>Магия</span><i><em style="--v:65%"></em></i></div>
+          <div><span>Ловкость</span><i><em style="--v:95%"></em></i></div>
+        </div>
+        <div class="clazz__skills">
+          <div><b>Тысяча Стрел</b><span>Веер стрел, поражающий цели в дуге.</span></div>
+          <div><b>Зов духа</b><span>Вызывает спутника — волка, сокола или медведя.</span></div>
+          <div><b>Лунная Охота</b><span>Ultimate: отметка цели, гарантия крит.</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- Rogue -->
+    <article class="clazz" data-class="rogue">
+      <div class="clazz__img"><img src="assets/img/moon-forest.jpg" alt="Разбойник в лунной ночи" /></div>
+      <div class="clazz__meta">
+        <h3>Разбойник <span>· Клинок Теней</span></h3>
+        <p>Рождается из тишины, исчезает в дыме. Мастер невидимости, ядов и неожиданного финала.</p>
+        <div class="stats">
+          <div><span>Мощь</span><i><em style="--v:80%"></em></i></div>
+          <div><span>Защита</span><i><em style="--v:45%"></em></i></div>
+          <div><span>Магия</span><i><em style="--v:50%"></em></i></div>
+          <div><span>Ловкость</span><i><em style="--v:99%"></em></i></div>
+        </div>
+        <div class="clazz__skills">
+          <div><b>Теневой Рывок</b><span>Мгновенный перенос за спину цели.</span></div>
+          <div><b>Яды Лихолесья</b><span>Кинжалы накладывают 3 стака отравления.</span></div>
+          <div><b>Полночный Приговор</b><span>Ultimate: серия ударов-теней на 6 целях.</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PARALLAX STRIP -->
+<section class="strip" style="background-image:url('assets/img/dragon.jpg')">
+  <div class="strip__overlay"></div>
+  <div class="strip__content">
+    <h3 class="reveal">«Древние драконы проснулись. <span class="gold">Ты услышишь их первым.»</span></h3>
+    <p class="reveal">— Голос Старейшин, хроника 1048 года от Разлома</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features section" id="features">
+  <div class="section__head">
+    <p class="eyebrow reveal">— Системы мира —</p>
+    <h2 class="title reveal">Всё, о чём мечтал <span class="gold">каждый искатель</span></h2>
+  </div>
+  <div class="features__grid">
+    <div class="feature reveal" style="--d:.0s"><div class="feature__icon">⚔️</div><h4>Рейды 40+</h4><p>Массовые сражения с древними боссами и уникальной механикой фаз.</p></div>
+    <div class="feature reveal" style="--d:.05s"><div class="feature__icon">🏰</div><h4>Осады замков</h4><p>Гильдии штурмуют крепости, меняя карту мира в реальном времени.</p></div>
+    <div class="feature reveal" style="--d:.1s"><div class="feature__icon">🐉</div><h4>Маунты и питомцы</h4><p>Грифоны, волки теней, драконы — 120+ спутников с прокачкой.</p></div>
+    <div class="feature reveal" style="--d:.15s"><div class="feature__icon">🪄</div><h4>Рунное крафтинг</h4><p>Ковка оружия с уникальными эффектами. Без одинаковых билдов.</p></div>
+    <div class="feature reveal" style="--d:.2s"><div class="feature__icon">🗺️</div><h4>Живой лор</h4><p>Сезонные сюжетные арки с последствиями для всего сервера.</p></div>
+    <div class="feature reveal" style="--d:.25s"><div class="feature__icon">🎭</div><h4>Истинный отыгрыш</h4><p>Игровые таверны, театральные дуэли, гильдейские обеты.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery section" id="gallery">
+  <div class="section__head">
+    <p class="eyebrow reveal">— Снимки Этериона —</p>
+    <h2 class="title reveal">Галерея <span class="gold">миров</span></h2>
+  </div>
+  <div class="gallery__grid">
+    <figure class="gallery__item reveal g-1"><img src="assets/img/castle-mount.jpg" alt="Замок в горах"/><figcaption>Шпили Варнхейма</figcaption></figure>
+    <figure class="gallery__item reveal g-2"><img src="assets/img/dark-castle.jpg" alt="Тёмный замок"/><figcaption>Кровавый Престол</figcaption></figure>
+    <figure class="gallery__item reveal g-3"><img src="assets/img/mist-forest.jpg" alt="Туманный лес"/><figcaption>Лес Шепчущих Теней</figcaption></figure>
+    <figure class="gallery__item reveal g-4"><img src="assets/img/moon-forest.jpg" alt="Лунный лес"/><figcaption>Ночь Лунной Короны</figcaption></figure>
+    <figure class="gallery__item reveal g-5"><img src="assets/img/dragon.jpg" alt="Дракон"/><figcaption>Пробуждение Вирмир</figcaption></figure>
+    <figure class="gallery__item reveal g-6"><img src="assets/img/misty-mount.jpg" alt="Туманные горы"/><figcaption>Перевал Эхо</figcaption></figure>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news section" id="news">
+  <div class="section__head">
+    <p class="eyebrow reveal">— Хроники —</p>
+    <h2 class="title reveal">Последние <span class="gold">вести</span></h2>
+  </div>
+  <div class="news__grid">
+    <article class="card reveal">
+      <div class="card__img" style="background-image:url('assets/img/dark-castle.jpg')"><span class="card__tag">Обновление 3.2</span></div>
+      <div class="card__body">
+        <time>14 апреля</time>
+        <h4>«Эра Драконов»: четыре новых босса и сезонный рейд</h4>
+        <p>Разлом пробудил Царя Пепла. Гильдии получат доступ к новой экипировке легендарного уровня.</p>
+        <a href="#" class="link">Читать →</a>
+      </div>
+    </article>
+    <article class="card reveal" style="--d:.08s">
+      <div class="card__img" style="background-image:url('assets/img/castle-mount.jpg')"><span class="card__tag">Ивент</span></div>
+      <div class="card__body">
+        <time>02 апреля</time>
+        <h4>Ночь Лунной Короны: мировой ивент с двойным опытом</h4>
+        <p>48 часов магического карнавала: скидки в лавках, уникальные маунты и редкие реликвии.</p>
+        <a href="#" class="link">Читать →</a>
+      </div>
+    </article>
+    <article class="card reveal" style="--d:.16s">
+      <div class="card__img" style="background-image:url('assets/img/wizard-tower.jpg')"><span class="card__tag">Дневник</span></div>
+      <div class="card__body">
+        <time>21 марта</time>
+        <h4>Дневник разработчиков: переработка системы крафтинга</h4>
+        <p>Мы убрали рандом и добавили 40+ рунных эффектов. Каждое оружие теперь — история.</p>
+        <a href="#" class="link">Читать →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta section" id="cta">
+  <div class="cta__bg" style="background-image:url('assets/img/hero-castle.jpg')"></div>
+  <div class="cta__overlay"></div>
+  <div class="cta__content">
+    <p class="eyebrow reveal">— Присоединяйся —</p>
+    <h2 class="title reveal">Твоя <span class="gold">сага</span> ждёт.</h2>
+    <p class="subtitle reveal">Бесплатная загрузка клиента. Никаких подписок. 150 ГБ приключений.</p>
+    <form class="signup reveal" onsubmit="event.preventDefault(); this.classList.add('is-done'); this.querySelector('.signup__msg').textContent='Добро пожаловать в Этерион, странник.';">
+      <input type="email" required placeholder="твой@email.ru" aria-label="Email"/>
+      <button type="submit" class="btn btn--gold">
+        <span>Получить ключ</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+      <p class="signup__msg"></p>
+    </form>
+    <div class="platforms reveal">
+      <span>Доступно на</span>
+      <div class="platforms__list">
+        <span>Windows</span><i></i><span>PlayStation 5</span><i></i><span>Xbox Series</span><i></i><span>Cloud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="logo">
+        <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 4 L58 52 H42 L32 34 L22 52 H6 Z" fill="#d4af37"/>
+          <path d="M32 22 L40 38 H24 Z" fill="#0a0a12"/>
+        </svg>
+        <span class="logo__text">AETHERIA</span>
+      </div>
+      <p>© 2026 Aetheria Studios. Все миры принадлежат своим героям.</p>
+    </div>
+    <div class="footer__cols">
+      <div><h5>Игра</h5><a href="#">Системные требования</a><a href="#">Классы</a><a href="#">Экономика</a><a href="#">PvP</a></div>
+      <div><h5>Сообщество</h5><a href="#">Discord</a><a href="#">Форум</a><a href="#">Twitch</a><a href="#">YouTube</a></div>
+      <div><h5>Поддержка</h5><a href="#">Помощь</a><a href="#">Статус серверов</a><a href="#">Возврат</a><a href="#">Контакты</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>v3.2 «Эра Драконов»</span>
+    <span>Крафтится с ❀ в северных студиях</span>
+  </div>
+</footer>
+
+<!-- Trailer modal -->
+<div class="modal" id="trailer" role="dialog" aria-hidden="true" aria-label="Трейлер">
+  <button class="modal__close" id="trailerClose" aria-label="Закрыть">✕</button>
+  <div class="modal__frame">
+    <div class="modal__placeholder">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#d4af37" stroke-width="2"/><path d="M26 20v24l20-12z" fill="#d4af37"/></svg>
+      <p>Трейлер «Эра Драконов» скоро появится в твоём мире.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
